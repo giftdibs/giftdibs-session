@@ -25,7 +25,7 @@ import {
 
 import {
   SessionService
-} from './session.service';
+} from '../session/session.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
