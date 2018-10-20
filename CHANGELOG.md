@@ -1,3 +1,7 @@
+# 1.0.0-rc.3 (2018-10-20)
+
+- Added authorization providers. [#3](https://github.com/giftdibs/giftdibs-session/pull/3)
+
 # 1.0.0-rc.2 (2018-10-20)
 
 - Added startup module. [#2](https://github.com/giftdibs/giftdibs-session/pull/2)
