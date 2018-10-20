@@ -18,12 +18,17 @@ import {
   GD_API_URL
 } from './api-url-token';
 
+import {
+  GD_AUTHORIZATION_PROVIDERS
+} from '../authorization/authorization-providers';
+
 @NgModule({
   imports: [
     CommonModule,
     SessionStartupModule
   ],
   providers: [
+    GD_AUTHORIZATION_PROVIDERS,
     SessionService
   ]
 })
