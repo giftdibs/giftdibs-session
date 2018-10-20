@@ -2,4 +2,4 @@
  * Public API Surface of session
  */
 
-export * from './lib';
+export * from './lib/session';
