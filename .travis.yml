@@ -17,6 +17,9 @@ cache:
 before_script:
   - npm install -g @angular/cli
 
+script:
+  - ng lint
+
 after_success:
   - ng build session
   - cd dist
