@@ -1,3 +1,7 @@
+# 1.0.0-rc.5 (2019-03-06)
+
+- Upgraded dependencies.
+
 # 1.0.0-rc.4 (2018-11-17)
 
 - Updated session user interface.
