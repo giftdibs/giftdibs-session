@@ -1,3 +1,7 @@
+# 1.0.0-rc.6 (2019-06-11)
+
+- Updated package.json to fix vulnerability warnings.
+
 # 1.0.0-rc.5 (2019-03-06)
 
 - Upgraded dependencies.
