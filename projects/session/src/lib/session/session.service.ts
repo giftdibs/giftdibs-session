@@ -71,9 +71,11 @@ export class SessionService implements OnDestroy {
   }
 
   public patchUser(data: SessionUser): SessionUser {
-    const user = this.user;
-    Object.keys(user).forEach((key: keyof SessionUser) => {
-      if (data[key] !== undefined) {
+    const user: SessionUser = this.user;
+
+    Object.keys(user).forEach((key) => {
+      const value: any = data[key];
+      if (value !== undefined) {
         user[key] = data[key];
       }
     });
