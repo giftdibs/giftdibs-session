@@ -1,3 +1,7 @@
+# 1.0.0-rc.7 (2019-08-29)
+
+- Upgraded to Angular 8.
+
 # 1.0.0-rc.6 (2019-06-11)
 
 - Updated package.json to fix vulnerability warnings.
