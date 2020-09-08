@@ -1,5 +1,6 @@
 import {
-  NgModule
+  NgModule,
+  ModuleWithProviders
 } from '@angular/core';
 
 import {
@@ -33,7 +34,7 @@ import {
   ]
 })
 export class SessionModule {
-  public static forRoot(apiUrl: string) {
+  public static forRoot(apiUrl: string): ModuleWithProviders<SessionModule> {
     return {
       ngModule: SessionModule,
       providers: [{
