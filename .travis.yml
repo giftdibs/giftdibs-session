@@ -22,6 +22,6 @@ script:
   - ng lint
 
 after_success:
-  - ng build session
+  - npm run build
   - cd dist
   - bash <(curl -s https://giftdibs.github.io/giftdibs-ci/publish.sh)
