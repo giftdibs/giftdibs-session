@@ -1,10 +1,8 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, Inject } from '@angular/core';
 
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-
-import { SessionService } from './session.service';
-
 import { GD_API_URL } from './api-url-token';
+import { SessionService } from './session.service';
 
 @Injectable()
 export class SessionStartupService {

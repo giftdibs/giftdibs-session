@@ -1,6 +1,5 @@
-import { APP_INITIALIZER, NgModule } from '@angular/core';
-
 import { HttpClientModule } from '@angular/common/http';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 
 import { SessionStartupService } from './session-startup.service';
 

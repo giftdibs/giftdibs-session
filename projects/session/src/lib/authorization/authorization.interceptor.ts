@@ -1,5 +1,3 @@
-import { Injectable } from '@angular/core';
-
 import {
   HttpErrorResponse,
   HttpEvent,
@@ -8,11 +6,10 @@ import {
   HttpRequest,
   HttpResponse,
 } from '@angular/common/http';
-
+import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs';
-
 import { tap } from 'rxjs/operators';
 
 import { SessionService } from '../session/session.service';

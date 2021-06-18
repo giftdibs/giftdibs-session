@@ -1,14 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
-import { CommonModule } from '@angular/common';
-
-import { SessionService } from './session.service';
-
-import { SessionStartupModule } from './session-startup.module';
+import { GD_AUTHORIZATION_PROVIDERS } from '../authorization/authorization-providers';
 
 import { GD_API_URL } from './api-url-token';
-
-import { GD_AUTHORIZATION_PROVIDERS } from '../authorization/authorization-providers';
+import { SessionStartupModule } from './session-startup.module';
+import { SessionService } from './session.service';
 
 @NgModule({
   imports: [CommonModule, SessionStartupModule],
