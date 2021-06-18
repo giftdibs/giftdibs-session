@@ -1,38 +1,31 @@
-import {
-  Injectable,
-  OnDestroy
-} from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 
-import {
-  BehaviorSubject
-} from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
-import {
-  SessionUser
-} from './session-user';
+import { SessionUser } from './session-user';
 
 @Injectable()
 export class SessionService implements OnDestroy {
-  public userStream = new BehaviorSubject<SessionUser>({} as SessionUser);
+  public userStream = new BehaviorSubject<SessionUser | undefined>(undefined);
 
   public get isLoggedIn(): boolean {
-    return (this.token !== undefined);
+    return this.token !== undefined;
   }
 
-  public get token(): string {
+  public get token(): string | undefined {
     return this._token;
   }
 
-  public set token(value: string) {
+  public set token(value: string | undefined) {
     this._token = value;
     this.save();
   }
 
-  public get user(): SessionUser {
+  public get user(): SessionUser | undefined {
     return this._user;
   }
 
-  public set user(value: SessionUser) {
+  public set user(value: SessionUser | undefined) {
     this._user = value;
     this.userStream.next(this.user);
     this.save();
@@ -40,11 +33,11 @@ export class SessionService implements OnDestroy {
 
   private storageKey = 'giftdibs.session';
 
-  private _user: SessionUser;
-  private _token: string;
+  private _user: SessionUser | undefined;
+  private _token: string | undefined;
 
   constructor() {
-    const storage = JSON.parse(localStorage.getItem(this.storageKey));
+    const storage = JSON.parse(localStorage.getItem(this.storageKey) || '');
 
     if (storage) {
       if (storage.user && storage.token) {
@@ -67,18 +60,22 @@ export class SessionService implements OnDestroy {
   }
 
   public isSessionUser(userId: string): boolean {
-    return (this.user.id === userId);
+    return this.user?.id === userId;
   }
 
   public patchUser(data: SessionUser): SessionUser {
-    const user: SessionUser = this.user;
+    const user = this.user;
 
-    Object.keys(user).forEach((key) => {
-      const value: any = data[key];
+    if (!user) {
+      return data;
+    }
+
+    for (const key in user) {
+      const value: any = data[key as keyof SessionUser];
       if (value !== undefined) {
-        user[key] = data[key];
+        user[key as keyof SessionUser] = value;
       }
-    });
+    }
 
     this.user = user;
 
@@ -88,7 +85,7 @@ export class SessionService implements OnDestroy {
   private save(): void {
     const parsed = JSON.stringify({
       user: this.user,
-      token: this.token
+      token: this.token,
     });
     localStorage.setItem(this.storageKey, parsed);
   }

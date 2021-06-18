@@ -1,3 +1,7 @@
+# 2.0.0-rc.0 (2020-09-08)
+
+- Added support for Angular 10. [#14](https://github.com/giftdibs/giftdibs-session/pull/14)
+
 # 1.0.0-rc.7 (2019-08-29)
 
 - Upgraded to Angular 8.

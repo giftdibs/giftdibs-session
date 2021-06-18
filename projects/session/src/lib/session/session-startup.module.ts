@@ -1,17 +1,12 @@
-import {
-  APP_INITIALIZER,
-  NgModule
-} from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 
-import {
-  HttpClientModule
-} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
-import {
-  SessionStartupService
-} from './session-startup.service';
+import { SessionStartupService } from './session-startup.service';
 
-export function startupServiceFactory(startupService: SessionStartupService): Function {
+export function startupServiceFactory(
+  startupService: SessionStartupService,
+): Function {
   // See: https://github.com/angular/angular/issues/14485
   const cb = function () {
     return startupService.load();
@@ -21,17 +16,15 @@ export function startupServiceFactory(startupService: SessionStartupService): Fu
 }
 
 @NgModule({
-  imports: [
-    HttpClientModule
-  ],
+  imports: [HttpClientModule],
   providers: [
     SessionStartupService,
     {
       provide: APP_INITIALIZER,
       useFactory: startupServiceFactory,
       deps: [SessionStartupService],
-      multi: true
-    }
-  ]
+      multi: true,
+    },
+  ],
 })
-export class SessionStartupModule { }
+export class SessionStartupModule {}

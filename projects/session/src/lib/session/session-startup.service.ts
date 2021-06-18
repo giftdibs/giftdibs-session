@@ -1,19 +1,10 @@
-import {
-  Injectable, Inject
-} from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 
-import {
-  HttpClient,
-  HttpHeaders
-} from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import {
-  SessionService
-} from './session.service';
+import { SessionService } from './session.service';
 
-import {
-  GD_API_URL
-} from './api-url-token';
+import { GD_API_URL } from './api-url-token';
 
 @Injectable()
 export class SessionStartupService {
@@ -22,7 +13,7 @@ export class SessionStartupService {
   constructor(
     private http: HttpClient,
     private sessionService: SessionService,
-    @Inject(GD_API_URL) private apiUrl: string
+    @Inject(GD_API_URL) private apiUrl: string,
   ) {
     this.resourceUrl = apiUrl + '/auth';
   }
@@ -30,7 +21,7 @@ export class SessionStartupService {
   public load(): Promise<any> {
     const token = this.sessionService.token;
     const headers = new HttpHeaders({
-      'Authorization': `JWT ${token}`
+      Authorization: `JWT ${token}`,
     });
 
     return this.http

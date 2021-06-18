@@ -8,6 +8,6 @@ export interface SessionUser {
   notificationSettings?: {
     [settingName: string]: {
       allowEmail?: boolean;
-    }
+    };
   };
 }
