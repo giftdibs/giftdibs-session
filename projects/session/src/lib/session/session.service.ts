@@ -37,7 +37,7 @@ export class SessionService implements OnDestroy {
   private _token: string | undefined;
 
   constructor() {
-    const storage = JSON.parse(localStorage.getItem(this.storageKey) || '');
+    const storage = JSON.parse(localStorage.getItem(this.storageKey) || '{}');
 
     if (storage) {
       if (storage.user && storage.token) {

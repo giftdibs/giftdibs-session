@@ -1,3 +1,7 @@
+# 2.0.0 (2021-10-17)
+
+- Initial `2.0.0` release.
+
 # 2.0.0-rc.2 (2021-10-17)
 
 - Updated package dependencies.
