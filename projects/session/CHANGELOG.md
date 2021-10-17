@@ -1,3 +1,7 @@
+# 2.0.0-rc.2 (2021-10-17)
+
+- Updated package dependencies.
+
 # 2.0.0-rc.1 (2021-06-20)
 
 - Added support for Angular 12. [#15](https://github.com/giftdibs/giftdibs-session/pull/15)
