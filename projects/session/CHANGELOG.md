@@ -1,3 +1,7 @@
+# 13.0.0 (2021-11-16)
+
+- Added support for Angular 13.
+
 # 2.0.0 (2021-10-17)
 
 - Initial `2.0.0` release.
